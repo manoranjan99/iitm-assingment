@@ -13,21 +13,17 @@
     height: 100%;
 }
 
-.grant_access{
-
+.grant_access_space{
     width: 50%;
     justify-content: center;
     margin-left: auto;
     margin-right: auto;
-
 }
 
 .grant_access_button{
-
     display: flex;
     background-color: black;
     margin-left: auto;
     margin-right: auto;
     color: white;
-
 }

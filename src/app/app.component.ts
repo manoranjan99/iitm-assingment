@@ -7,9 +7,10 @@ import { GrantAccessDialogComponent } from './grant-access-dialog/grant-access-d
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
+
+// Main component
 export class AppComponent implements OnInit {
 
-  title = 'iitm-assignment';
   location_enabled:boolean;
   camera_enabled:boolean;
 
@@ -20,6 +21,7 @@ export class AppComponent implements OnInit {
     this.update_permission_variable();
   }
 
+  // open dialog to approve permission
   open_permission_dialog()
   {
 
@@ -31,6 +33,7 @@ export class AppComponent implements OnInit {
     
   }
 
+  //update permission variable according to user response
   private update_permission_variable()
   {
     if(localStorage.getItem("iitm_website_location") == "location_granted") {   this.location_enabled=true;   }
@@ -41,8 +44,11 @@ export class AppComponent implements OnInit {
 
   }
 
+  //if users changes permission in setting, update the permission value.
   private update_permission_if_revoked()
   {
+
+    // permission revoke is depricated, only we can use permissions query
 
     navigator.permissions.query({ name: "geolocation" }).then((result) => {
       if (result.state === "granted") {
@@ -52,19 +58,21 @@ export class AppComponent implements OnInit {
     }});
 
 
-    if(localStorage.getItem("iitm_website_camera") == "camera_granted") {
-    navigator.mediaDevices.getUserMedia( { audio: false, video: true } )
-    .then( ( stream ) => {
-      localStorage.setItem("iitm_website_camera","camera_granted"); this.camera_enabled=true; // already in access    
-    },
-    error => {
-      localStorage.removeItem("iitm_website_camera");  this.camera_enabled=false;  // denied or not given permission
-    } );
+    // navigator permission query is not there for camera
+    if(localStorage.getItem("iitm_website_camera") == "camera_granted"){
+
+      navigator.mediaDevices.getUserMedia( { audio: false, video: true } )
+      .then( ( stream ) => {
+        localStorage.setItem("iitm_website_camera","camera_granted"); this.camera_enabled=true; // already in access    
+      },
+      error => {
+        localStorage.removeItem("iitm_website_camera");  this.camera_enabled=false;  // denied or not given permission
+      } );
+
     }
 
 
   }
-
 
 
 }

@@ -5,7 +5,7 @@
 
 <main class="home">
 
-  <div class="grant_access">
+  <div class="grant_access_space">
 
     <mat-grid-list cols="2" rowHeight="170px">
 
@@ -53,38 +53,6 @@
 
     </mat-grid-list>
 
-    <!-- <div style="display: flex; padding: auto;">
-      <div style="padding: 10px;"> <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="location_on"></mat-icon>  </div>
-      <div style="padding: 10px;"> <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="camera_alt"></mat-icon> </div>
-    </div>
-
-    <div style="display: flex; padding: auto;">
-
-      <div style="padding: 10px;">
-
-        <div *ngIf="location_enabled">
-          <mat-icon style="color: green;" aria-hidden="false" aria-label="check icon" fontIcon="check_circle"></mat-icon>
-        </div>  
-
-        <div *ngIf="!location_enabled">
-          <mat-icon style="color: red;" aria-hidden="false" aria-label="cancel icon" fontIcon="cancel"></mat-icon>
-        </div>  
-
-      </div>
-
-      <div style="padding: 10px;">
-
-        <div *ngIf="camera_enabled">
-          <mat-icon style="color: green;" aria-hidden="false" aria-label="check icon" fontIcon="check_circle"></mat-icon>
-        </div>  
-
-        <div *ngIf="!camera_enabled">
-          <mat-icon style="color: red;"  aria-hidden="false" aria-label="cancel icon" fontIcon="cancel"></mat-icon>
-        </div>     
-      
-      </div>
-
-    </div> -->
     
     <div>
       <button mat-button (click)="open_permission_dialog()" class="grant_access_button">Grant Access</button>

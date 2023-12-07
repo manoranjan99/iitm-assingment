@@ -24,6 +24,7 @@ export class GrantAccessDialogComponent implements OnInit {
     this.set_content();
   }
 
+  // set variable from local storage
   private set_variables()
   {
 
@@ -35,24 +36,23 @@ export class GrantAccessDialogComponent implements OnInit {
 
   }
 
+  // set dialog content
   private set_content()
   {
      if(this.location_enabled == false )
      {
-
         this.font_icon="location_on";
         this.dialog_content="Location permissions are required to access the web page";
 
      }else if(this.location_enabled == true && this.camera_enabled == false)
      {
-
         this.font_icon="camera_alt";
         this.dialog_content= "Camera permissions are required to access the web page";
-
      }
 
   }
 
+  // when user clicks continue button, update information dynamically 
   click_continue_button()
   {
     if(this.location_enabled == false )
@@ -79,6 +79,7 @@ export class GrantAccessDialogComponent implements OnInit {
   }
 
 
+  // get camera request access and update corresponding variable
   private camera_access()
   {
 
@@ -101,6 +102,7 @@ export class GrantAccessDialogComponent implements OnInit {
 
   }
 
+  // subscribe to location, and update corresponding variable
   private location_access()
   {
 
