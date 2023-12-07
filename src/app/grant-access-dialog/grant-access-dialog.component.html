@@ -1,8 +1,11 @@
 <h3 class="dialog_content" mat-dialog-title>Allow Access</h3>
 <div mat-dialog-content class="dialog_content">
-  <div style="padding: 10px;"> <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon='{{font_icon}}'></mat-icon>  </div>
+  <div style="padding: 10px;"> <mat-icon style="transform: scale(2);" aria-hidden="false" aria-label="Example home icon" fontIcon='{{font_icon}}'></mat-icon>  </div>
   <p>{{dialog_content}}</p>
 </div>
 <div mat-dialog-actions class="dialog_content" *ngIf="button_visible">
   <button mat-button (click)="click_continue_button()">Continue</button>
+</div>
+<div class="dialog_content" *ngIf="!button_visible">
+    <mat-spinner class="dialog_content" [diameter]="30"></mat-spinner>
 </div>

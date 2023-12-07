@@ -96,7 +96,7 @@ export class GrantAccessDialogComponent implements OnInit {
      }).catch((error:any)=>{
 
       console.log(error)
-      this.dialog_content= "Please modify camera access in setting only for this site. You will not be able to proceed further without providing camera access."
+      this.dialog_content= "Please modify camera access in settings for this site. You will not be able to proceed further without providing camera access."
 
      })
 
@@ -115,7 +115,7 @@ export class GrantAccessDialogComponent implements OnInit {
       this.button_visible=true;
 
      }, (error:any) =>{
-        this.dialog_content= "Please allow location in setting only for this site. You will not be able to proceed further without providing location access."
+        this.dialog_content= "Please allow location in settings for this site. You will not be able to proceed further without providing location access."
      })
 
   }
