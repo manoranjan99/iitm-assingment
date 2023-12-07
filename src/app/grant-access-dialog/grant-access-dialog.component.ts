@@ -10,8 +10,8 @@ import { Observable, catchError } from 'rxjs';
 })
 export class GrantAccessDialogComponent implements OnInit {
 
-  dialog_content:string;
-  font_icon:string='location_on';
+  dialog_content:string="All Set!";
+  font_icon:string='check_circle_outline';
 
   button_visible=true;
   location_enabled:boolean=false;
@@ -92,6 +92,7 @@ export class GrantAccessDialogComponent implements OnInit {
       this.camera_enabled=true;
       this.button_visible=true;
       localStorage.setItem("iitm_website_camera", "camera_granted");
+      this.font_icon="check_circle_outline";
       this.dialog_content= "Permission granted"
 
 

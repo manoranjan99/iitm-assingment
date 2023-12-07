@@ -21,6 +21,7 @@ export class AppComponent implements OnInit {
 
   open_permission_dialog()
   {
+    
     const GrantAccessDialogComponent_Reference = this.dialog.open(GrantAccessDialogComponent);
 
     GrantAccessDialogComponent_Reference.afterClosed().subscribe(()=>{

@@ -7,7 +7,53 @@
 
   <div class="grant_access">
 
-    <div style="display: flex; padding: auto;">
+    <mat-grid-list cols="2" rowHeight="170px">
+
+      <mat-grid-tile [colspan]="1"> 
+        <div style="padding: 10px;">
+          <mat-icon style="font-size: 50px; padding: 50px;" aria-hidden="false" aria-label="Example home icon" fontIcon="location_on"></mat-icon>
+          <p style="text-align: center;">Location</p>
+        </div>
+      </mat-grid-tile>
+
+      <mat-grid-tile [colspan]="1"> 
+        <div style="padding: 10px;">
+          <mat-icon style="font-size: 50px; margin-left: auto; margin-right: auto; padding: 50px;" aria-hidden="false" aria-label="Example home icon" fontIcon="camera_alt"></mat-icon>
+          <p style="text-align: center;">Camera</p>
+        </div>
+      </mat-grid-tile>
+     
+      <mat-grid-tile [colspan]="1">
+        <div style="padding: 10px;">
+
+          <div *ngIf="location_enabled">
+            <mat-icon style="color: green; font-size: 40px; padding: 100px;" aria-hidden="false" aria-label="check icon" fontIcon="check_circle"></mat-icon>
+          </div>  
+  
+          <div *ngIf="!location_enabled">
+            <mat-icon style="color: red; font-size: 40px; padding: 100px;" aria-hidden="false" aria-label="cancel icon" fontIcon="cancel"></mat-icon>
+          </div>  
+  
+        </div>
+      </mat-grid-tile>
+
+      <mat-grid-tile [colspan]="1">
+        <div style="padding: 10px;">
+
+          <div *ngIf="camera_enabled">
+            <mat-icon style="color: green; font-size: 40px; padding: 100px" aria-hidden="false" aria-label="check icon" fontIcon="check_circle"></mat-icon>
+          </div>  
+  
+          <div *ngIf="!camera_enabled">
+            <mat-icon style="color: red; font-size: 40px; padding: 100px;"  aria-hidden="false" aria-label="cancel icon" fontIcon="cancel"></mat-icon>
+          </div>     
+        
+        </div>
+      </mat-grid-tile>
+
+    </mat-grid-list>
+
+    <!-- <div style="display: flex; padding: auto;">
       <div style="padding: 10px;"> <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="location_on"></mat-icon>  </div>
       <div style="padding: 10px;"> <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="camera_alt"></mat-icon> </div>
     </div>
@@ -38,10 +84,10 @@
       
       </div>
 
-    </div>
+    </div> -->
     
     <div>
-      <button mat-button (click)="open_permission_dialog()" style="background-color: black; color: white;">Grant Access</button>
+      <button mat-button (click)="open_permission_dialog()" class="grant_access_button">Grant Access</button>
     </div>
 
   </div>

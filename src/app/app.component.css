@@ -15,9 +15,19 @@
 
 .grant_access{
 
-    width: fit-content;
+    width: 50%;
     justify-content: center;
     margin-left: auto;
     margin-right: auto;
+
+}
+
+.grant_access_button{
+
+    display: flex;
+    background-color: black;
+    margin-left: auto;
+    margin-right: auto;
+    color: white;
 
 }
