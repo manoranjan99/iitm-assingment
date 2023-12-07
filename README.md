@@ -16,5 +16,5 @@ Run `ng build` to build the project. The build artifacts will be stored in the `
 
 
 ## deployment website
-https://main--jovial-conkies-233804.netlify.app/
+https://jovial-conkies-233804.netlify.app/
 
