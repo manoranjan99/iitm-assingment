@@ -16,13 +16,14 @@ export class AppComponent implements OnInit {
   constructor(public dialog:MatDialog) {}
 
   ngOnInit(): void {
+    this.update_permission_if_revoked();
     this.update_permission_variable();
   }
 
   open_permission_dialog()
   {
-    
-    const GrantAccessDialogComponent_Reference = this.dialog.open(GrantAccessDialogComponent);
+
+    const GrantAccessDialogComponent_Reference = this.dialog.open(GrantAccessDialogComponent,{width:'40%'});
 
     GrantAccessDialogComponent_Reference.afterClosed().subscribe(()=>{
         this.update_permission_variable();
@@ -37,6 +38,30 @@ export class AppComponent implements OnInit {
 
     if(localStorage.getItem("iitm_website_camera") == "camera_granted") {   this.camera_enabled=true;   }
     else { this.camera_enabled=false;  }
+
+  }
+
+  private update_permission_if_revoked()
+  {
+
+    navigator.permissions.query({ name: "geolocation" }).then((result) => {
+      if (result.state === "granted") {
+        localStorage.setItem("iitm_website_location","location_granted");  this.location_enabled=true;   // already in access
+      } else {
+        localStorage.removeItem("iitm_website_location");  this.location_enabled=false;   // denied or not given permission
+    }});
+
+
+    if(localStorage.getItem("iitm_website_camera") == "camera_granted") {
+    navigator.mediaDevices.getUserMedia( { audio: false, video: true } )
+    .then( ( stream ) => {
+      localStorage.setItem("iitm_website_camera","camera_granted"); this.camera_enabled=true; // already in access    
+    },
+    error => {
+      localStorage.removeItem("iitm_website_camera");  this.camera_enabled=false;  // denied or not given permission
+    } );
+    }
+
 
   }
 

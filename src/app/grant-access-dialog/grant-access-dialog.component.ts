@@ -81,12 +81,8 @@ export class GrantAccessDialogComponent implements OnInit {
 
   private camera_access()
   {
-     const mediaStreamConstraints = {
-      audio: false,
-      video: true
-     }; 
 
-     navigator.mediaDevices.getUserMedia(mediaStreamConstraints).then((MediaStream:any) =>{
+     navigator.mediaDevices.getUserMedia({ audio: false, video: true }).then((MediaStream:any) =>{
 
       console.log(MediaStream)
       this.camera_enabled=true;
