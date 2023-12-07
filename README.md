@@ -2,7 +2,7 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.0.2.
 
-## project setup
+## Project setup
 
 Run `npm install` to install all neccessary modules. Once the modules are installed, use `ng serve` to run in dev mode.
 
@@ -14,4 +14,7 @@ Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The appli
 
 Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
 
+
+## deployment website
+https://main--jovial-conkies-233804.netlify.app/
 
